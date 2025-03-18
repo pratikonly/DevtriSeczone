@@ -1022,7 +1022,26 @@ img[loading="lazy"].loaded {
 /* Operations Row */
 @media (min-width: 769px) {
     .team-section .row {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .team-section .col-12 {
+        width: 100%;
+    }
+    
+    /* Directors in one line */
+    .team-section .col-md-4:nth-child(2),
+    .team-section .col-md-4:nth-child(3),
+    .team-section .col-md-4:nth-child(4) {
+        width: 33.333%;
+    }
+    
+    /* Center Rup and Mala cards */
+    .team-section .col-md-4:nth-child(5),
+    .team-section .col-md-4:nth-child(6) {
+        width: 33.333%;
+        margin: 0 auto;
     }
 }
 
