@@ -1037,10 +1037,10 @@ img[loading="lazy"].loaded {
         width: 33.333%;
     }
     
-    /* Center Rup and Mala cards */
+    /* Center and bring Rup and Mala cards closer */
     .team-section .col-md-4:nth-child(5),
     .team-section .col-md-4:nth-child(6) {
-        width: 33.333%;
+        width: 25%;
         margin: 0 auto;
     }
 }
