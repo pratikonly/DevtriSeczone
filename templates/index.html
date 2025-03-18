@@ -27,12 +27,12 @@
 </section>
 
 <!-- Statistics Section -->
-<section id="statistics" class="statistics py-5 bg-light">
+<section id="statistics" class="statistics">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-3 mb-4">
                 <div class="stat-item">
-                    <i class="fas fa-users-crown text-primary mb-3"></i>
+                    <i class="fas fa-smile-beam text-primary mb-3"></i>
                     <h2 class="counter">250+</h2>
                     <p>Happy Clients</p>
                 </div>
@@ -57,6 +57,23 @@
                     <h2>24/7</h2>
                     <p>Support</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">About Us</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1557425631-f132f06f4aa1" alt="Team" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Who We Are</h3>
+                <p>Devtri Seczone Private Limited specializes in crafting professional letters of recommendation and documentation that help advance your career. With years of experience in professional documentation, we understand what makes a compelling letter.</p>
+                <p>Our mission is to provide you with high-quality, personalized letters that effectively communicate your skills, achievements, and potential to future employers or academic institutions.</p>
             </div>
         </div>
     </div>
@@ -114,47 +131,6 @@
     </div>
 </section>
 
-<!-- Blogs Section -->
-<section id="blogs" class="blogs py-5">
-    <div class="container">
-        <h2 class="text-center">Our <span class="text-primary">Blogs</span></h2>
-        <div class="row mt-5">
-            <div class="col-md-3 mb-4">
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" alt="Delhi Blog" class="img-fluid mb-3">
-                    <h4>Manpower Supply Company in Delhi</h4>
-                    <p>As the central economic powerhouse of India Delhi maintains various industrial establishments with businesses and corporate organizations functioning ...</p>
-                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1565109698955-47435fcc3fb9" alt="Ghaziabad Blog" class="img-fluid mb-3">
-                    <h4>Manpower Consultancy in Ghaziabad</h4>
-                    <p>Ghaziabad, an important industrial hub in the National Capital Region (NCR), buzzes with factories, transportation, and a booming service industry...</p>
-                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd" alt="Noida Blog" class="img-fluid mb-3">
-                    <h4>Manpower Outsourcing Company in Noida</h4>
-                    <p>Noida exists as a rapidly growing industrial and commercial center that attracts stable enterprises and entrepreneurial ventures. The active business...</p>
-                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1581094613520-64981692c3f6" alt="Faridabad Blog" class="img-fluid mb-3">
-                    <h4>Manpower Services in Faridabad</h4>
-                    <p>The industrial center of Haryana which is Faridabad has experienced quick economic growth in recent years which leads to the great need for Manpower...</p>
-                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Team Section -->
 <section id="team" class="team-section">
     <div class="container">
@@ -168,7 +144,7 @@
                         <div class="team-member-img">
                             <img src="{{ url_for('static', filename='images/sk.jpg') }}" alt="Shailendra Kumar Singh">
                         </div>
-                        <h4>Shailendra Kumar Singh</h4>
+                        <h4 style="color: #007bff;">Shailendra Kumar Singh</h4>
                         <div class="contact-icons">
                             <a href="tel:+917827050067" title="Call"><i class="fas fa-phone"></i></a>
                             <a href="mailto:info@devtriseczone.com"><i class="fas fa-envelope"></i></a>
@@ -262,18 +238,42 @@
     </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="about py-5">
+<!-- Blogs Section -->
+<section id="blogs" class="blogs py-5">
     <div class="container">
-        <h2 class="text-center mb-5">About Us</h2>
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1557425631-f132f06f4aa1" alt="Team" class="img-fluid rounded">
+        <h2 class="text-center">Our <span class="text-primary">Blogs</span></h2>
+        <div class="row mt-5">
+            <div class="col-md-3 mb-4">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" alt="Delhi Blog" class="img-fluid mb-3">
+                    <h4>Manpower Supply Company in Delhi</h4>
+                    <p>As the central economic powerhouse of India Delhi maintains various industrial establishments with businesses and corporate organizations functioning ...</p>
+                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>Who We Are</h3>
-                <p>Devtri Seczone Private Limited specializes in crafting professional letters of recommendation and documentation that help advance your career. With years of experience in professional documentation, we understand what makes a compelling letter.</p>
-                <p>Our mission is to provide you with high-quality, personalized letters that effectively communicate your skills, achievements, and potential to future employers or academic institutions.</p>
+            <div class="col-md-3 mb-4">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1565109698955-47435fcc3fb9" alt="Ghaziabad Blog" class="img-fluid mb-3">
+                    <h4>Manpower Consultancy in Ghaziabad</h4>
+                    <p>Ghaziabad, an important industrial hub in the National Capital Region (NCR), buzzes with factories, transportation, and a booming service industry...</p>
+                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd" alt="Noida Blog" class="img-fluid mb-3">
+                    <h4>Manpower Outsourcing Company in Noida</h4>
+                    <p>Noida exists as a rapidly growing industrial and commercial center that attracts stable enterprises and entrepreneurial ventures. The active business...</p>
+                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1581094613520-64981692c3f6" alt="Faridabad Blog" class="img-fluid mb-3">
+                    <h4>Manpower Services in Faridabad</h4>
+                    <p>The industrial center of Haryana which is Faridabad has experienced quick economic growth in recent years which leads to the great need for Manpower...</p>
+                    <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
+                </div>
             </div>
         </div>
     </div>
