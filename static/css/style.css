@@ -486,7 +486,20 @@ body {
         padding: 1rem;
     }
 
-    /* Team cards 2x2 grid */
+    /* Founder and First Director */
+    .team-section .row.justify-content-center {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .team-section .row.justify-content-center .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Directors and Operations grid */
     .team-section .row:not(.justify-content-center) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -496,15 +509,6 @@ body {
     .team-section .col-md-4 {
         width: 100%;
         max-width: 100%;
-    }
-
-    .team-card {
-        padding: 1rem;
-    }
-
-    .team-member-img {
-        width: 120px;
-        height: 120px;
     }
 
     /* Blogs 2x2 grid */
