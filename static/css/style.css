@@ -549,43 +549,29 @@ body {
 
     /* All team cards grid layout */
     .team-section .row {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
-    .team-section .col-md-6,
+    .team-section .col-12 {
+        grid-column: span 2;
+    }
+
+    .team-section .col-md-4:nth-child(2),
+    .team-section .col-md-4:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    .team-section .col-md-4:nth-child(4),
+    .team-section .col-md-4:nth-child(5) {
+        grid-column: span 1;
+    }
+
     .team-section .col-md-4 {
         width: 100%;
         max-width: 100%;
-    }
-
-    .team-card {
-        padding: 0.75rem;
-    }
-
-    .team-member-img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 0.5rem;
-    }
-
-    .team-member {
-        padding: 0.75rem;
-    }
-
-    .team-member h4 {
-        font-size: 0.9rem;
-        margin-bottom: 0.25rem;
-    }
-
-    .position-label {
-        font-size: 0.8rem;
-        padding: 3px 10px;
-        margin-bottom: 0.5rem;
-    }
-
-    .team-member .contact-icons a {
-        font-size: 1rem;
-        margin: 0 5px;
+        margin-bottom: 10px;
     }
 
     /* Blogs and Services grid */
