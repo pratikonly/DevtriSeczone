@@ -495,17 +495,25 @@ body {
     }
 
     .hero {
-        height: 100vh;
+        height: auto;
         padding-top: 76px;
+        flex-direction: column;
     }
 
     .hero .slide img {
-        height: 100vh;
+        height: 50vh;
         object-fit: cover;
     }
 
     .hero-overlay {
-        height: 100vh;
+        height: 50vh;
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 3;
+        padding: 2rem 1rem;
+        background: var(--dark-bg);
     }
 
     /* Statistics 2x2 grid */
