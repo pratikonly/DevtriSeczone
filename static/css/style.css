@@ -797,6 +797,11 @@ section p.text-center {
 .founder-card {
     background: linear-gradient(135deg, #0062E6 0%, #33A1FD 100%);
     color: white;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.founder-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
