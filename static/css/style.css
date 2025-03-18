@@ -670,13 +670,13 @@ section p.text-center {
 }
 
 .team-member-img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 2rem;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
     border-radius: 50%;
-    border: 4px solid var(--primary-color);
-    padding: 4px;
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+    border: 3px solid var(--primary-color);
+    padding: 3px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     transition: all 0.4s ease;
     overflow: hidden;
 }
@@ -695,8 +695,8 @@ section p.text-center {
 
 .team-card {
     background: var(--card-bg);
-    border-radius: 20px;
-    padding: 2.5rem;
+    border-radius: 15px;
+    padding: 1.5rem;
     height: 100%;
     transition: all 0.4s ease;
     border: 1px solid rgba(0, 123, 255, 0.1);
@@ -781,11 +781,11 @@ section p.text-center {
 
 .team-member {
     text-align: center;
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: 1rem;
+    border-radius: 10px;
     background: var(--card-bg);
     transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
@@ -795,8 +795,8 @@ section p.text-center {
 
 .team-member h4 {
     color: white;
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
