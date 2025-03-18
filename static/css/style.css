@@ -921,3 +921,18 @@ section p.text-center {
         transform: translateY(0);
     }
 }
+
+/* Add these styles for lazy loading */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+.blur-load {
+    background-size: cover;
+    background-position: center;
+}

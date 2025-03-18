@@ -54,6 +54,31 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(showSlides, 3000);
     }
 
+    // Lazy loading images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            // Store original src in data-src
+            if (!img.dataset.src) {
+                img.dataset.src = img.src;
+                img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Transparent placeholder
+            }
+            imageObserver.observe(img);
+        });
+    }
+
     // Contact toggle functionality
     const contactToggle = document.querySelector('.contact-toggle');
     const contactOptions = document.querySelector('.contact-options');
@@ -81,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
 
     // Form validation
     const contactForm = document.getElementById('contactForm');
