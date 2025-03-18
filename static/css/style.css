@@ -132,7 +132,7 @@ body {
 .hero .container {
     position: relative;
     z-index: 3;
-    padding-top: 0;
+    padding-top: 250px;
 }
 
 .hero h1 {
