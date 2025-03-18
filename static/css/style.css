@@ -6,12 +6,68 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
+    color: #007bff !important;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: translateX(5px);
+}
+
+.nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    padding: 8px 15px !important;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+    background: rgba(0,123,255,0.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: #007bff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 /* Hero Section with Slideshow */
