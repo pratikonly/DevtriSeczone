@@ -501,12 +501,12 @@ body {
     }
 
     .hero .slide img {
-        height: 50vh;
+        height: 35vh;
         object-fit: cover;
     }
 
     .hero-overlay {
-        height: 50vh;
+        height: 35vh;
     }
 
     .hero .container {
@@ -514,7 +514,7 @@ body {
         z-index: 3;
         padding: 2rem 1rem;
         background: var(--dark-bg);
-        margin-top: 25vh;
+        margin-top: 15vh;
     }
 
     /* Statistics 2x2 grid */
