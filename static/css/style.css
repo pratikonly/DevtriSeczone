@@ -373,6 +373,8 @@ section p.text-center {
 .founder-card {
     background: linear-gradient(135deg, #0062E6 0%, #33A1FD 100%);
     color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 .founder-card h3,
@@ -386,6 +388,13 @@ section p.text-center {
 .founder-card .team-member {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.founder-card .team-member-img {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,123,255,0.3);
 }
 
 .position-label {
