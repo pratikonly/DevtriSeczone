@@ -2,7 +2,7 @@
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
-    --dark-bg: #0a0a0a;
+    --dark-bg: #100f0f;
     --light-text: #ffffff;
     --card-bg: #1a1a1a;
     --hover-color: #0056b3;
@@ -162,35 +162,40 @@ body {
 }
 
 .statistics {
-    background-color: #f8f9fa;
+    background-color: var(--dark-bg);
     padding: 60px 0;
+    border-top: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .stat-item {
     padding: 30px;
     text-align: center;
     transition: transform 0.3s ease;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .stat-item:hover {
     transform: translateY(-10px);
+    border-color: var(--primary-color);
 }
 
 .stat-item i {
     font-size: 3rem;
-    color: #007bff;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .stat-item h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
+    color: var(--light-text);
     margin-bottom: 0.5rem;
 }
 
 .stat-item p {
-    color: #666;
+    color: var(--light-text);
     font-size: 1.1rem;
     margin-bottom: 0;
 }
@@ -240,7 +245,7 @@ body {
 
 .industry-card i {
     font-size: 3rem;
-    color: #007bff;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
@@ -270,19 +275,25 @@ body {
 
 .contact-info {
     padding: 2rem;
-    background: #f8f9fa;
+    background: var(--card-bg);
     border-radius: 10px;
     height: 100%;
+    border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .contact-info i {
-    color: #007bff;
+    color: var(--primary-color);
     margin-right: 10px;
     font-size: 1.2rem;
 }
 
 .contact-info h3 {
     margin-bottom: 1.5rem;
+    color: var(--light-text);
+}
+
+.contact-info p {
+    color: var(--light-text);
 }
 
 .footer {
@@ -299,7 +310,7 @@ body {
 }
 
 .footer a:hover {
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 .social-links a {
@@ -368,12 +379,12 @@ body {
 section h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
+    color: var(--light-text);
     margin-bottom: 1rem;
 }
 
 section p.text-center {
-    color: #666;
+    color: var(--light-text);
     max-width: 800px;
     margin: 0 auto 3rem;
 }
@@ -413,20 +424,22 @@ section p.text-center {
 
 .form-label {
     font-weight: 600;
-    color: #333;
+    color: var(--light-text);
 }
 
 .blog-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     padding: 1rem;
     height: 100%;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .blog-card:hover {
     transform: translateY(-10px);
+    border-color: var(--primary-color);
 }
 
 .blog-card img {
@@ -436,12 +449,12 @@ section p.text-center {
 
 .blog-card h4 {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--light-text);
     margin-bottom: 1rem;
 }
 
 .blog-card p {
-    color: #666;
+    color: var(--light-text);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -454,8 +467,13 @@ section p.text-center {
 }
 
 .team-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: var(--dark-bg);
     padding: 80px 0;
+    border-top: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.team-section h2 {
+    color: var(--light-text);
 }
 
 .team-member-img {
@@ -572,32 +590,31 @@ section p.text-center {
     text-align: center;
     padding: 1.5rem;
     border-radius: 12px;
-    background: #f8f9fa;
+    background: var(--card-bg);
     transition: all 0.3s ease;
     margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
-.founder-card .team-member {
-    transform: translateY(-5px);
-    background: white;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+.team-member:hover {
+    border-color: var(--primary-color);
 }
 
 .team-member h4 {
-    color: #2c3e50;
+    color: var(--light-text);
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
 
 .team-member p {
-    color: #666;
+    color: var(--light-text);
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
 }
 
 .team-member i {
-    color: #007bff;
+    color: var(--primary-color);
     margin-right: 0.5rem;
     font-size: 1.1rem;
 }
@@ -619,14 +636,14 @@ section p.text-center {
 }
 
 .team-member .contact-icons a {
-    color: #007bff;
+    color: var(--primary-color);
     margin: 0 10px;
     font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 .team-member .contact-icons a:hover {
-    color: #0056b3;
+    color: var(--hover-color);
     transform: scale(1.2);
 }
 
