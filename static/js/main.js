@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(showSlides, 5000);
     }
 
+    // Contact toggle functionality
+    const contactToggle = document.querySelector('.contact-toggle');
+    const contactOptions = document.querySelector('.contact-options');
+
+    if (contactToggle) {
+        contactToggle.addEventListener('mouseenter', function() {
+            contactOptions.classList.add('show');
+        });
+
+        contactToggle.addEventListener('mouseleave', function() {
+            contactOptions.classList.remove('show');
+        });
+    }
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

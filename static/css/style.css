@@ -409,33 +409,65 @@ section p.text-center {
 /* Contact Toggle Button */
 .contact-toggle {
     position: fixed;
-    right: -140px;
+    right: -150px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: right center;
     z-index: 99;
     transition: right 0.3s ease;
-}
-
-.contact-toggle:hover {
-    right: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-btn {
-    background: #007bff;
+    background: #1a1a1a;
     color: white;
     border: none;
     padding: 15px 25px;
-    border-radius: 30px 0 0 30px;
+    border-radius: 30px 30px 0 0;
     cursor: pointer;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 10px;
     transition: background-color 0.3s ease;
+    width: 200px;
 }
 
-.contact-btn:hover {
-    background: #0056b3;
+.contact-options {
+    display: none;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    position: absolute;
+    top: 0;
+    right: 200px;
+    width: 250px;
+}
+
+.contact-options.show {
+    display: block;
+}
+
+.contact-option {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-option:hover {
+    background-color: #333;
+    color: white;
+}
+
+.contact-toggle:hover {
+    right: 150px;
 }
 
 .contact-btn i {
