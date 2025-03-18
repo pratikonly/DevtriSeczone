@@ -490,8 +490,8 @@ body {
     .team-section .row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        margin-bottom: 1rem;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .team-section .col-md-6,
@@ -501,32 +501,33 @@ body {
     }
 
     .team-card {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 
     .team-member-img {
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0.5rem;
     }
 
     .team-member {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 
     .team-member h4 {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
     }
 
     .position-label {
-        font-size: 1rem;
-        padding: 5px 15px;
-    }
-        gap: 1rem;
+        font-size: 0.8rem;
+        padding: 3px 10px;
+        margin-bottom: 0.5rem;
     }
 
-    .team-section .col-md-4 {
-        width: 100%;
-        max-width: 100%;
+    .team-member .contact-icons a {
+        font-size: 1rem;
+        margin: 0 5px;
     }
 
     /* Blogs 2x2 grid */
