@@ -8,7 +8,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    box-shadow: 0 4px 12px rgba(128,0,128,0.3);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
     padding: 1rem 0;
     transition: all 0.4s ease;
     background: rgba(10, 10, 10, 0.95) !important;
@@ -18,7 +18,7 @@ body {
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #800080 !important;
+    color: #007bff !important;
     transition: all 0.4s ease;
     position: relative;
     padding: 5px 15px;
@@ -219,7 +219,7 @@ body {
     background: #1a1a1a;
     height: 100%;
     color: #fff;
-    border: 1px solid #800080;
+    border: 1px solid #007bff;
 }
 
 .service-card:hover {
@@ -410,13 +410,13 @@ section p.text-center {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background-color: #800080;
-    border-color: #800080;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 .btn-primary:hover {
-    background-color: #660066;
-    border-color: #660066;
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
 /* Form Styling */
