@@ -488,15 +488,25 @@ body {
 
     /* Founder and First Director */
     .team-section .row.justify-content-center {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        justify-content: center;
         gap: 1rem;
         margin-bottom: 1rem;
     }
 
     .team-section .row.justify-content-center .col-md-6 {
-        width: 100%;
-        max-width: 100%;
+        width: 45%;
+        max-width: 300px;
+        flex: 0 0 auto;
+    }
+
+    .team-section .row.justify-content-center .team-member-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .team-section .row.justify-content-center .team-card {
+        padding: 1.5rem;
     }
 
     /* Directors and Operations grid */
