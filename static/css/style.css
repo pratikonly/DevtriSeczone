@@ -558,23 +558,17 @@ body {
         grid-column: span 2;
     }
 
-    .team-section .col-md-4:nth-child(2),
-    .team-section .col-md-4:nth-child(3) {
-        grid-column: span 1;
-    }
-
-    .team-section .col-md-4:nth-child(4),
-    .team-section .col-md-4:nth-child(5) {
-        grid-column: span 1;
-    }
-
     .team-section .col-md-4 {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 10px;
+        grid-column: span 1;
     }
 
-    /* Blogs and Services grid */
+    /* Center only Mala's card */
+    .team-section .col-md-4:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
     .blogs .row,
     .services .row {
         display: grid;
@@ -1023,4 +1017,53 @@ img[loading="lazy"].loaded {
 .blur-load {
     background-size: cover;
     background-position: center;
+}
+
+/* Operations Row */
+@media (min-width: 769px) {
+    .team-section .row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .team-section .col-12 {
+        grid-column: span 3;
+    }
+
+    .team-section .col-md-4:nth-child(2),
+    .team-section .col-md-4:nth-child(3),
+    .team-section .col-md-4:nth-child(4) {
+        grid-column: span 1;
+    }
+
+    /* Center Rup and Mala cards */
+    .team-section .col-md-4:nth-last-child(2),
+    .team-section .col-md-4:last-child {
+        margin: 0 auto;
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-section .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .team-section .col-12 {
+        grid-column: span 2;
+    }
+
+    .team-section .col-md-4 {
+        grid-column: span 1;
+    }
+
+    /* Center only Mala's card */
+    .team-section .col-md-4:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+    }
 }
