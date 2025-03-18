@@ -10,6 +10,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    padding-top: 76px; /* Height of navbar */
     background: var(--dark-bg);
     color: var(--light-text);
     line-height: 1.6;
@@ -21,6 +22,11 @@ body {
     padding: 1rem 0;
     transition: all 0.4s ease;
     border-bottom: 1px solid rgba(0, 123, 255, 0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 .navbar.scrolled {
@@ -91,18 +97,9 @@ body {
     display: flex;
     align-items: center;
     color: var(--light-text);
-    min-height: calc(100vh - 76px);
+    height: calc(100vh - 76px); /* Viewport height minus navbar height */
+    margin-top: 0;
     overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
-    z-index: 1;
 }
 
 .slideshow-container {
@@ -111,6 +108,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 .slide {
@@ -130,12 +128,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+    z-index: 2;
 }
 
 .hero .container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    padding-top: 0;
 }
 
 .hero h1 {
@@ -152,7 +161,6 @@ body {
     animation: fadeInUp 1.2s ease;
 }
 
-/* Statistics Section */
 .statistics {
     background-color: #f8f9fa;
     padding: 60px 0;
@@ -187,7 +195,6 @@ body {
     margin-bottom: 0;
 }
 
-/* Services Section */
 .service-card {
     text-align: center;
     padding: 2.5rem;
@@ -217,7 +224,6 @@ body {
     color: var(--hover-color);
 }
 
-/* Industries Section */
 .industry-card {
     text-align: center;
     padding: 2rem;
@@ -248,7 +254,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* About Section */
 .about {
     padding: 80px 0;
 }
@@ -263,7 +268,6 @@ body {
     color: #333;
 }
 
-/* Contact Section */
 .contact-info {
     padding: 2rem;
     background: #f8f9fa;
@@ -281,7 +285,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Footer Styles */
 .footer {
     margin-top: 2rem;
     background-color: #333;
@@ -304,7 +307,6 @@ body {
     margin-right: 1rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -363,7 +365,6 @@ body {
     }
 }
 
-/* Section Headers */
 section h2 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -377,7 +378,6 @@ section p.text-center {
     margin: 0 auto 3rem;
 }
 
-/* Buttons */
 .btn-primary {
     background: var(--primary-color);
     border: none;
@@ -395,7 +395,6 @@ section p.text-center {
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Form Styling */
 .form-control {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -417,7 +416,6 @@ section p.text-center {
     color: #333;
 }
 
-/* Blogs Section */
 .blog-card {
     background: white;
     border-radius: 10px;
@@ -455,7 +453,6 @@ section p.text-center {
     font-weight: 600;
 }
 
-/* Team Section */
 .team-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 80px 0;
@@ -633,7 +630,6 @@ section p.text-center {
     transform: scale(1.2);
 }
 
-/* WhatsApp Float Button */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -660,7 +656,6 @@ section p.text-center {
     transform: scale(1.1);
 }
 
-/* Contact Toggle Button */
 .contact-toggle {
     position: fixed;
     right: -150px;
@@ -728,7 +723,6 @@ section p.text-center {
     font-size: 20px;
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
