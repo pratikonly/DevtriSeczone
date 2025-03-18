@@ -240,3 +240,93 @@ section p.text-center {
     font-weight: 600;
     color: #333;
 }
+
+/* Blogs Section */
+.blog-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1rem;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-card img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.blog-card h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.blog-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card .btn {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Team Section */
+.team-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+    height: 100%;
+}
+
+.team-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member h4 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.team-member i {
+    color: #007bff;
+    margin-right: 0.5rem;
+}
+
+.team-member small {
+    display: block;
+    color: #007bff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
