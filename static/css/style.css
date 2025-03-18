@@ -774,7 +774,7 @@ section p.text-center {
 .team-card {
     background: var(--card-bg);
     border-radius: 15px;
-    padding: 1.5rem;
+    padding: 0rem;
     height: 100%;
     transition: all 0.4s ease;
     border: 1px solid rgba(0, 123, 255, 0.1);
