@@ -46,6 +46,41 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Statistics Section */
+.statistics {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.stat-item {
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-item i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.stat-item h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
 /* Services Section */
 .service-card {
     text-align: center;
@@ -54,6 +89,7 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     background: white;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -66,9 +102,50 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Industries Section */
+.industry-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+.industry-card:hover {
+    transform: translateY(-10px);
+}
+
+.industry-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+
+.industry-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.industry-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
 /* About Section */
+.about {
+    padding: 80px 0;
+}
+
 .about img {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.about h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
 }
 
 /* Contact Section */
@@ -76,21 +153,31 @@ body {
     padding: 2rem;
     background: #f8f9fa;
     border-radius: 10px;
+    height: 100%;
 }
 
 .contact-info i {
     color: #007bff;
     margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-info h3 {
+    margin-bottom: 1.5rem;
 }
 
 /* Footer Styles */
 .footer {
     margin-top: 2rem;
+    background-color: #333;
+    color: white;
+    padding: 60px 0 30px;
 }
 
 .footer a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
@@ -99,7 +186,7 @@ body {
 
 .social-links a {
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    margin-right: 1rem;
 }
 
 /* Responsive Design */
@@ -107,8 +194,49 @@ body {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
-    .service-card {
+
+    .service-card, .industry-card {
         margin-bottom: 1.5rem;
     }
+
+    .stat-item {
+        margin-bottom: 2rem;
+    }
+
+    .about img {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Section Headers */
+section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+section p.text-center {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+/* Buttons */
+.btn-primary {
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+.form-control {
+    padding: 0.8rem;
+    border-radius: 5px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
 }
