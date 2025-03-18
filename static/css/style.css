@@ -486,33 +486,41 @@ body {
         padding: 1rem;
     }
 
-    /* Founder and First Director */
-    .team-section .row.justify-content-center {
-        display: flex;
-        justify-content: center;
+    /* All team cards grid layout */
+    .team-section .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin-bottom: 1rem;
     }
 
-    .team-section .row.justify-content-center .col-md-6 {
-        width: 45%;
-        max-width: 300px;
-        flex: 0 0 auto;
+    .team-section .col-md-6,
+    .team-section .col-md-4 {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .team-section .row.justify-content-center .team-member-img {
-        width: 150px;
-        height: 150px;
+    .team-card {
+        padding: 1rem;
     }
 
-    .team-section .row.justify-content-center .team-card {
-        padding: 1.5rem;
+    .team-member-img {
+        width: 120px;
+        height: 120px;
     }
 
-    /* Directors and Operations grid */
-    .team-section .row:not(.justify-content-center) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .team-member {
+        padding: 1rem;
+    }
+
+    .team-member h4 {
+        font-size: 1.2rem;
+    }
+
+    .position-label {
+        font-size: 1rem;
+        padding: 5px 15px;
+    }
         gap: 1rem;
     }
 
