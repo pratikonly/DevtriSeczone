@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Hero Section -->
-<section id="home" class="hero" style="background-image: url('https://images.unsplash.com/photo-1523875194681-bedd468c58bf');">
+<!-- Hero Section with Slideshow -->
+<section id="home" class="hero">
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="{{ url_for('static', filename='images/1.jpeg') }}" alt="Slide 1">
+        </div>
+        <div class="slide fade">
+            <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Slide 3">
+        </div>
+    </div>
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <h1>Letters of Recommendation</h1>
-                <p class="lead">Professional letters and documentation services for your career advancement</p>
-                <a href="#contact" class="btn btn-primary btn-lg">Request a Letter</a>
+                <h1>Lions Workforce</h1>
+                <p class="lead">India's Leading Manpower Outsourcing & Staffing Organization</p>
+                <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
             </div>
         </div>
     </div>
@@ -132,6 +143,9 @@
                 <div class="team-card">
                     <h3>Founder</h3>
                     <div class="team-member">
+                        <div class="team-member-img">
+                            <img src="https://ui-avatars.com/api/?name=Shailendra+Kumar+Singh&size=200" alt="Shailendra Kumar Singh" class="img-fluid rounded-circle mb-3">
+                        </div>
                         <h4>Shailendra Kumar Singh</h4>
                         <p><i class="fas fa-phone"></i> +91 78270 50067</p>
                     </div>
@@ -143,18 +157,27 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <div class="team-member">
+                                <div class="team-member-img">
+                                    <img src="https://ui-avatars.com/api/?name=Rina+Singh&size=150" alt="Rina Singh" class="img-fluid rounded-circle mb-3">
+                                </div>
                                 <h4>Rina Singh</h4>
                                 <p><i class="fas fa-phone"></i> +91 77177 26073</p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="team-member">
+                                <div class="team-member-img">
+                                    <img src="https://ui-avatars.com/api/?name=Pinky+Singh&size=150" alt="Pinky Singh" class="img-fluid rounded-circle mb-3">
+                                </div>
                                 <h4>Pinky Singh</h4>
                                 <p><i class="fas fa-phone"></i> +91 96510 18625</p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="team-member">
+                                <div class="team-member-img">
+                                    <img src="https://ui-avatars.com/api/?name=Rakesh+Sharma&size=150" alt="Rakesh Sharma" class="img-fluid rounded-circle mb-3">
+                                </div>
                                 <h4>Rakesh Sharma</h4>
                                 <p><i class="fas fa-phone"></i> +91 90826 25959</p>
                             </div>
@@ -168,11 +191,17 @@
                 <div class="team-card">
                     <h3>Chief Operating Officers</h3>
                     <div class="team-member">
+                        <div class="team-member-img">
+                            <img src="https://ui-avatars.com/api/?name=Rup+Singh&size=150" alt="Rup Singh" class="img-fluid rounded-circle mb-3">
+                        </div>
                         <h4>Rup Singh</h4>
                         <p><i class="fas fa-phone"></i> +91 84594 15396</p>
                         <small>COO</small>
                     </div>
                     <div class="team-member mt-3">
+                        <div class="team-member-img">
+                            <img src="https://ui-avatars.com/api/?name=Mala+Singh&size=150" alt="Mala Singh" class="img-fluid rounded-circle mb-3">
+                        </div>
                         <h4>Mala Singh</h4>
                         <p><i class="fas fa-phone"></i> +91 77260 66722</p>
                         <small>MOO</small>
@@ -183,6 +212,9 @@
                 <div class="team-card">
                     <h3>Finance</h3>
                     <div class="team-member">
+                        <div class="team-member-img">
+                            <img src="https://ui-avatars.com/api/?name=Priya+Sharma&size=150" alt="Priya Sharma" class="img-fluid rounded-circle mb-3">
+                        </div>
                         <h4>Priya Sharma</h4>
                         <p><i class="fas fa-phone"></i> +91 88281 97181</p>
                         <small>Finance Consultant</small>

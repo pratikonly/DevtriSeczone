@@ -14,16 +14,43 @@ body {
     font-size: 1.5rem;
 }
 
-/* Hero Section */
+/* Hero Section with Slideshow */
 .hero {
     height: 100vh;
-    background-size: cover;
-    background-position: center;
     position: relative;
     display: flex;
     align-items: center;
     color: white;
     margin-top: -76px;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-overlay {
@@ -33,17 +60,12 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
 .hero .container {
     position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+    z-index: 2;
 }
 
 /* Statistics Section */
@@ -280,21 +302,35 @@ section p.text-center {
 }
 
 /* Team Section */
+.team-member-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    padding: 3px;
+}
+
+.team-member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .team-card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 2rem;
     height: 100%;
+    transition: transform 0.3s ease;
 }
 
-.team-card h3 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+.team-card:hover {
+    transform: translateY(-5px);
 }
-
 .team-member {
     text-align: center;
     padding: 1rem;

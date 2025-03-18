@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Slideshow functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('active');
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].classList.add('active');
+        setTimeout(showSlides, 5000); // Change slide every 5 seconds
+    }
+
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+        setTimeout(showSlides, 5000);
+    }
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
