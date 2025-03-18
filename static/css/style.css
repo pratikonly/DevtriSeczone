@@ -347,10 +347,12 @@ section p.text-center {
     background: white;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    padding: 2.5rem;
+    padding: 2rem;
     height: 100%;
     transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .team-card:hover {
@@ -360,12 +362,50 @@ section p.text-center {
 
 .team-card h3 {
     color: #007bff;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     font-weight: 600;
     position: relative;
     padding-bottom: 15px;
+}
+
+.founder-card {
+    background: linear-gradient(135deg, #0062E6 0%, #33A1FD 100%);
+    color: white;
+}
+
+.founder-card h3,
+.founder-card h4,
+.founder-card p,
+.founder-card .contact-icons a,
+.founder-card i {
+    color: white;
+}
+
+.founder-card .team-member {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.position-label {
+    background: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.founder-card .position-label {
+    background: white;
+    color: #007bff;
 }
 
 .team-card h3:after {
