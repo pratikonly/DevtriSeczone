@@ -411,6 +411,118 @@ body {
         padding: 0.8rem 1rem !important;
         text-align: center;
     }
+
+    /* Add these mobile-specific styles */
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--dark-bg);
+        padding: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1040;
+    }
+
+    .navbar-collapse.show {
+        right: 0;
+    }
+
+    .hero {
+        height: 100vh;
+        padding-top: 76px;
+    }
+
+    .hero .slide img {
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        height: 100vh;
+    }
+
+    /* Statistics 2x2 grid */
+    .statistics .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .statistics .col-md-3 {
+        width: 100%;
+        max-width: 100%;
+        border-bottom: 1px solid rgba(0, 123, 255, 0.1);
+        padding-bottom: 1rem;
+    }
+
+    .statistics .col-md-3:nth-child(odd) {
+        border-right: 1px solid rgba(0, 123, 255, 0.1);
+    }
+
+    .statistics .col-md-3:nth-child(n+3) {
+        padding-top: 1rem;
+    }
+
+    /* Services 2x2 grid */
+    .services .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .services .col-md-4 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .service-card {
+        height: 100%;
+        padding: 1rem;
+    }
+
+    /* Team cards 2x2 grid */
+    .team-section .row:not(.justify-content-center) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .team-section .col-md-4 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .team-card {
+        padding: 1rem;
+    }
+
+    .team-member-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Blogs 2x2 grid */
+    .blogs .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .blogs .col-md-3 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .blog-card {
+        height: 100%;
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
