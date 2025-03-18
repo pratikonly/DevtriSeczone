@@ -10,7 +10,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    padding-top: 76px;
     background: var(--dark-bg);
     color: var(--light-text);
     line-height: 1.6;
@@ -18,15 +17,13 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    box-shadow: none;
-    padding: 1.5rem 0;
+    background: var(--dark-bg) !important;
+    padding: 1rem 0;
     transition: all 0.4s ease;
-    background: rgba(10, 10, 10, 0.2) !important;
-    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.95) !important;
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
 }
 
@@ -67,7 +64,7 @@ body {
 .nav-link:hover {
     color: var(--primary-color) !important;
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 123, 255, 0.1);
 }
 
 .nav-link::after {
@@ -88,41 +85,13 @@ body {
     opacity: 1;
 }
 
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-    background: transparent;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.navbar-toggler-icon {
-    width: 1.5em;
-    height: 1.5em;
-    transition: all 0.3s ease;
-}
-
-/* Add scroll behavior */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        background: rgba(10, 10, 10, 0.95);
-        padding: 1rem;
-        border-radius: 10px;
-        margin-top: 1rem;
-    }
-}
-
 /* Hero Section with Slideshow */
 .hero {
-    min-height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     color: var(--light-text);
-    margin-top: -76px;
+    min-height: calc(100vh - 76px);
     overflow: hidden;
 }
 
