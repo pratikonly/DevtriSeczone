@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
             slideIndex = 1;
         }
         slides[slideIndex - 1].classList.add('active');
-        setTimeout(showSlides, 5000); // Change slide every 5 seconds
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds
     }
 
     if (slides.length > 0) {
         slides[0].classList.add('active');
-        setTimeout(showSlides, 5000);
+        setTimeout(showSlides, 3000);
     }
 
     // Contact toggle functionality
