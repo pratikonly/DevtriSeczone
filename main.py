@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='static')
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 
 @app.route('/')
@@ -33,4 +33,4 @@ def contact():
         return redirect(url_for('index', _anchor='contact'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
