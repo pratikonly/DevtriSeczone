@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll behavior
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
     // Slideshow functionality
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -48,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
     // Form validation
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -75,17 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
-
-    // Navbar background change on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-white');
-            navbar.classList.add('shadow');
-        } else {
-            navbar.classList.remove('shadow');
-        }
-    });
 
     // Initialize Bootstrap tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));

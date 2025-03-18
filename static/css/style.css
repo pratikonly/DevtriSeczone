@@ -18,11 +18,16 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-    padding: 1rem 0;
+    box-shadow: none;
+    padding: 1.5rem 0;
     transition: all 0.4s ease;
+    background: rgba(10, 10, 10, 0.2) !important;
+    backdrop-filter: blur(8px);
+}
+
+.navbar.scrolled {
     background: rgba(10, 10, 10, 0.95) !important;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
 }
 
 .navbar-brand {
@@ -31,56 +36,38 @@ body {
     color: var(--primary-color) !important;
     transition: all 0.4s ease;
     position: relative;
-    padding: 5px 15px;
+    padding: 8px 20px;
     border-radius: 8px;
+    letter-spacing: 0.5px;
 }
 
 .navbar-brand:hover {
-    transform: translateX(5px) scale(1.05);
+    transform: translateX(5px);
     text-shadow: 2px 2px 4px rgba(0, 123, 255, 0.2);
     background: rgba(0, 123, 255, 0.1);
 }
 
 .nav-item {
-    margin: 0 10px;
+    margin: 0 5px;
     position: relative;
-    perspective: 1000px;
 }
 
 .nav-link {
     color: var(--light-text) !important;
     font-weight: 500;
-    padding: 8px 20px !important;
+    padding: 10px 25px !important;
     border-radius: 25px;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
-}
-
-.nav-link::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(128,0,128,0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-    z-index: -1;
-}
-
-.nav-link:hover::before {
-    width: 200px;
-    height: 200px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .nav-link:hover {
     color: var(--primary-color) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-    background: rgba(0, 123, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-link::after {
@@ -88,34 +75,44 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: 0;
+    bottom: 5px;
     left: 50%;
-    background: #007bff;
+    background: var(--primary-color);
     transition: all 0.4s ease;
     transform: translateX(-50%);
+    opacity: 0;
 }
 
 .nav-link:hover::after {
-    width: 80%;
-}
-
-.nav-item.active .nav-link {
-    color: #007bff !important;
-    background: rgba(0,123,255,0.1);
+    width: 50%;
+    opacity: 1;
 }
 
 .navbar-toggler {
     border: none;
     padding: 0.5rem;
+    background: transparent;
 }
 
 .navbar-toggler:focus {
     box-shadow: none;
+    outline: none;
 }
 
 .navbar-toggler-icon {
     width: 1.5em;
     height: 1.5em;
+    transition: all 0.3s ease;
+}
+
+/* Add scroll behavior */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
 }
 
 /* Hero Section with Slideshow */
