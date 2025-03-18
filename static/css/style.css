@@ -356,7 +356,6 @@ section p.text-center {
 }
 
 .team-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
@@ -442,7 +441,7 @@ section p.text-center {
     margin-bottom: 1.5rem;
 }
 
-.team-member:hover {
+.founder-card .team-member {
     transform: translateY(-5px);
     background: white;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
