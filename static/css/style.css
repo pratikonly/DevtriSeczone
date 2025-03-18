@@ -549,10 +549,7 @@ body {
 
     /* All team cards grid layout */
     .team-section .row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        margin-bottom: 0.5rem;
+        display: block;
     }
 
     .team-section .col-md-6,
