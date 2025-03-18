@@ -1022,26 +1022,7 @@ img[loading="lazy"].loaded {
 /* Operations Row */
 @media (min-width: 769px) {
     .team-section .row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-    .team-section .col-12 {
-        grid-column: span 3;
-    }
-
-    .team-section .col-md-4:nth-child(2),
-    .team-section .col-md-4:nth-child(3),
-    .team-section .col-md-4:nth-child(4) {
-        grid-column: span 1;
-    }
-
-    /* Center Rup and Mala cards */
-    .team-section .col-md-4:nth-last-child(2),
-    .team-section .col-md-4:last-child {
-        margin: 0 auto;
-        grid-column: span 1;
+        display: block;
     }
 }
 
