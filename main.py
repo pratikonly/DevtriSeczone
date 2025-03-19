@@ -39,6 +39,12 @@ def index():
     db.session.commit()
     return render_template('index.html')
 
+@app.route('/visitor-stats')
+def visitor_stats():
+    visitors = Visitor.query.all()
+    total_visitors = len(visitors)
+    return render_template('visitor_stats.html', total_visitors=total_visitors, visitors=visitors)
+
 @app.route('/contact', methods=['POST'])
 def contact():
     try:
