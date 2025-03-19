@@ -36,6 +36,7 @@ if not os.path.exists(images_dir):
 @app.route('/')
 def index():
     logger.debug("Rendering index page")
+    total_visitors = Visitor.query.count()
     try:
         client_ip = request.remote_addr
         new_visitor = Visitor(ip_address=client_ip)
@@ -55,7 +56,7 @@ def index():
     except Exception as e:
         logger.error(f"Error recording visitor: {str(e)}")
         
-    return render_template('index.html')
+    return render_template('index.html', total_visitors=total_visitors)
 
 @app.route('/visitor-stats')
 def visitor_stats():

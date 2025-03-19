@@ -16,6 +16,10 @@
 </head>
 <body>
     {% include 'includes/navbar.html' %}
+    <div class="visitor-counter">
+        <i class="fas fa-users"></i>
+        <span>{{ total_visitors }} Visitors</span>
+    </div>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
