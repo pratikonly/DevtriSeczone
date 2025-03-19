@@ -937,7 +937,7 @@ section p.text-center {
 /* Contact Toggle Button Styles */
 #contact-button {
     position: fixed;
-    right: 0;
+    right: -60px;
     top: 50%;
     background: #007bff;
     color: white;
@@ -954,13 +954,12 @@ section p.text-center {
     justify-content: center;
     gap: 10px;
     transform: translateY(-50%) rotate(90deg);
-    transform-origin: right bottom;
+    transform-origin: right center;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #contact-button i {
     font-size: 22px;
-    transform: rotate(-90deg);
 }
 
 #contact-button:hover {
@@ -971,9 +970,10 @@ section p.text-center {
 /* Contact Form */
 #contact-form {
     position: fixed;
-    right: -350px;
+    right: -160px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: right center;
     width: 320px;
     background: white;
     padding: 20px;
