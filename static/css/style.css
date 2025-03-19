@@ -937,24 +937,25 @@ section p.text-center {
 /* Contact Toggle Button Styles */
 #contact-button {
     position: fixed;
-    right: 3%;
-    top: 55%;
+    right: 0;
+    top: 50%;
     background: #007bff;
     color: white;
-    padding: 12px 18px;
+    padding: 15px 25px;
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px 0 0 5px;
     text-align: center;
     font-weight: bold;
-    transition: background 0.3s ease-in-out;
+    transition: all 0.3s ease;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    transform: rotate(-90deg);
-    transform-origin: right;
+    gap: 10px;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: right bottom;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #contact-button i {
@@ -964,59 +965,22 @@ section p.text-center {
 
 #contact-button:hover {
     background: #0056b3;
+    right: 5px;
 }
 
 /* Contact Form */
 #contact-form {
     position: fixed;
     right: -350px;
-    top: 20%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 320px;
     background: white;
     padding: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: right 0.4s ease-in-out;
     z-index: 1000;
-}
-
-#contact-form h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 22px;
-    color: #007bff;
-}
-
-#contact-form input, 
-#contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-#contact-form textarea {
-    height: 100px;
-    resize: none;
-}
-
-#contact-form button {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out;
-}
-
-#contact-form button:hover {
-    background: #0056b3;
 }
 
 .overlay {
@@ -1031,15 +995,14 @@ section p.text-center {
 }
 
 @media (max-width: 768px) {
+    #contact-button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
     #contact-form {
         width: 90%;
         max-width: 350px;
-    }
-
-    #contact-button {
-        right: 5%;
-        padding: 10px 15px;
-        font-size: 16px;
     }
 }
 
@@ -1094,7 +1057,7 @@ img[loading="lazy"].loaded {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width768px) {
     .team-section .row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1225,5 +1188,3 @@ img[loading="lazy"].loaded {
 ::-webkit-scrollbar-thumb:hover {
     background: #0056b3;
 }
-
-/* Contact Toggle Button Styles */
