@@ -1,4 +1,4 @@
-from flask import Flask, render_template, render_template_string
+from flask import Flask, render_template
 import os
 import logging
 import sys
@@ -22,16 +22,7 @@ app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
 def index():
     logger.info("Index route accessed")
     try:
-        # Read the content from index.html
-        with open('templates/index.html', 'r') as f:
-            index_content = f.read()
-            # Remove the extends and block tags
-            index_content = index_content.replace('{% extends "base.html" %}', '')
-            index_content = index_content.replace('{% block content %}', '')
-            index_content = index_content.replace('{% endblock %}', '')
-
-        # Render base.html with the index content
-        return render_template('base.html', content_from_index_html=index_content)
+        return render_template('index.html')
     except Exception as e:
         logger.error(f"Error rendering template: {str(e)}")
         return "Internal Server Error", 500
