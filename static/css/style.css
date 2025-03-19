@@ -65,6 +65,7 @@ body {
 }
 
 .flash-text {
+    margin-top: 10px;
     color: white;
     text-decoration: none;
     white-space: nowrap;
@@ -83,7 +84,7 @@ body {
 
 @media (max-width: 768px) {
     .flash-news {
-        top: 76px;
+        top: 106px;
     }
     .visitor-counter {
         top: 150px;
