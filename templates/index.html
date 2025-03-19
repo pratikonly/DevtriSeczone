@@ -5,13 +5,13 @@
 <section id="home" class="hero">
     <div class="slideshow-container">
         <div class="slide active">
-            <img src="https://picsum.photos/1920/1080?random=1" alt="Slide 1">
+            <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Slide 1">
         </div>
         <div class="slide">
-            <img src="https://picsum.photos/1920/1080?random=2" alt="Slide 2">
+            <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Slide 2">
         </div>
         <div class="slide">
-            <img src="https://picsum.photos/1920/1080?random=3" alt="Slide 3">
+            <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Slide 3">
         </div>
     </div>
     <div class="hero-overlay"></div>
@@ -25,6 +25,20 @@
         </div>
     </div>
 </section>
+
+<div id="contact-button"><i class="fas fa-phone"></i> Contact Us</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- Contact Form -->
+<div id="contact-form">
+    <h2>Contact Us</h2>
+    <form method="POST" action="{{ url_for('contact') }}">
+        <input type="text" id="name" name="name" placeholder="Full Name*" required>
+        <input type="email" id="email" name="email" placeholder="Email Address*" required>
+        <textarea id="message" name="message" placeholder="Your Message*" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 <!-- Statistics Section -->
 <section id="statistics" class="statistics">
@@ -62,19 +76,6 @@
     </div>
 </section>
 
-<div id="contact-button"><i class="fas fa-phone"></i> Contact Us</div>
-<div class="overlay" id="overlay"></div>
-
-<!-- Contact Form -->
-<div id="contact-form">
-    <h2>Contact Us</h2>
-    <form method="POST" action="{{ url_for('contact') }}">
-        <input type="text" id="name" name="name" placeholder="Full Name*" required>
-        <input type="email" id="email" name="email" placeholder="Email Address*" required>
-        <textarea id="message" name="message" placeholder="Your Message*" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</div>
 
 <!-- About Section -->
 <section id="about" class="about py-5">
