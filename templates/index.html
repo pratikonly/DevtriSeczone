@@ -69,7 +69,7 @@
 
 <!-- Contact Form -->
 <div id="contact-form">
-    <form method="POST" action="{{ url_for('contact') }}">
+    <form method="POST" >
         <input type="text" id="name" name="name" placeholder="Full Name*" required>
         <input type="email" id="email" name="email" placeholder="Email Address*" required>
         <textarea id="message" name="message" placeholder="Your Message*" required></textarea>
@@ -335,7 +335,7 @@
         <h2 class="text-center mb-5">Contact Us</h2>
         <div class="row">
             <div class="col-md-6">
-                <form id="contactForm" method="POST" action="{{ url_for('contact') }}">
+                <form id="contactForm">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" name="name" required>
