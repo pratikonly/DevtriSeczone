@@ -42,16 +42,17 @@ body {
 /* Creator Toggle */
 .creator-toggle {
     position: fixed;
-    left: 20px;
-    bottom: 20px;
+    left: 15px;
+    bottom: 15px;
     background: var(--primary-color);
     color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 6px 12px;
+    border-radius: 20px;
     cursor: pointer;
     z-index: 1000;
     transition: all 0.3s ease;
     text-decoration: none;
+    font-size: 12px;
 }
 
 .creator-toggle:hover {
