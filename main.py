@@ -20,6 +20,9 @@ class Visitor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ip_address = db.Column(db.String(50))
     visit_time = db.Column(db.DateTime, default=datetime.utcnow)
+    country = db.Column(db.String(100))
+    city = db.Column(db.String(100))
+    region = db.Column(db.String(100))
 
 with app.app_context():
     db.create_all()
@@ -34,7 +37,22 @@ if not os.path.exists(images_dir):
 def index():
     logger.debug("Rendering index page")
     client_ip = request.remote_addr
-    new_visitor = Visitor(ip_address=client_ip)
+    
+    try:
+        response = requests.get(f'http://ip-api.com/json/{client_ip}')
+        if response.status_code == 200:
+            data = response.json()
+            new_visitor = Visitor(
+                ip_address=client_ip,
+                country=data.get('country', 'Unknown'),
+                city=data.get('city', 'Unknown'),
+                region=data.get('regionName', 'Unknown')
+            )
+        else:
+            new_visitor = Visitor(ip_address=client_ip)
+    except:
+        new_visitor = Visitor(ip_address=client_ip)
+    
     db.session.add(new_visitor)
     db.session.commit()
     return render_template('index.html')

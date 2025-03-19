@@ -11,6 +11,9 @@
                 <thead>
                     <tr>
                         <th>IP Address</th>
+                        <th>Country</th>
+                        <th>Region</th>
+                        <th>City</th>
                         <th>Visit Time</th>
                     </tr>
                 </thead>
@@ -18,6 +21,9 @@
                     {% for visitor in visitors %}
                     <tr>
                         <td>{{ visitor.ip_address }}</td>
+                        <td>{{ visitor.country }}</td>
+                        <td>{{ visitor.region }}</td>
+                        <td>{{ visitor.city }}</td>
                         <td>{{ visitor.visit_time }}</td>
                     </tr>
                     {% endfor %}
