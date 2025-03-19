@@ -5,12 +5,20 @@ from email_validator import validate_email, EmailNotValidError
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
-app = Flask(__name__, static_url_path='', static_folder='static')
+app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
+
+# Ensure the static/images directory exists
+images_dir = os.path.join(app.static_folder, 'images')
+if not os.path.exists(images_dir):
+    os.makedirs(images_dir)
+    logger.info(f"Created images directory at {images_dir}")
 
 @app.route('/')
 def index():
+    logger.debug("Rendering index page")
     return render_template('index.html')
 
 @app.route('/contact', methods=['POST'])
@@ -36,7 +44,7 @@ def contact():
         return redirect(url_for('index', _anchor='contact'))
 
     except Exception as e:
-        logging.error(f"Error in contact form: {str(e)}")
+        logger.error(f"Error in contact form: {str(e)}")
         flash('An error occurred. Please try again later.', 'error')
         return redirect(url_for('index', _anchor='contact'))
 
