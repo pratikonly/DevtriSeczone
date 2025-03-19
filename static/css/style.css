@@ -953,14 +953,14 @@ section p.text-center {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transform: translateY(-50%) rotate(-90deg);
+    transform: translateY(-50%) rotate(90deg);
     transform-origin: right bottom;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #contact-button i {
     font-size: 22px;
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 #contact-button:hover {
@@ -1057,7 +1057,7 @@ img[loading="lazy"].loaded {
     }
 }
 
-@media (max-width768px) {
+@media (max-width: 768px) {
     .team-section .row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
