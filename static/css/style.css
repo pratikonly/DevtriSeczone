@@ -1130,6 +1130,11 @@ img[loading="lazy"].loaded {
     color: var(--light-text);
     margin-bottom: 20px;
     font-size: 1.5rem;
+    transform: rotate(90deg);
+    transform-origin: left center;
+    position: relative;
+    left: 50%;
+    margin-left: -1.5rem;
 }
 
 #contact-form input,
