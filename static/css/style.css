@@ -11,6 +11,12 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+@media (max-width: 768px) {
+    .visitor-counter {
+        top: 120px;
+    }
+}
+
 .visitor-counter i {
     margin-right: 5px;
 }
