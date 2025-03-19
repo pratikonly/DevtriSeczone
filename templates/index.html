@@ -1,6 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Visitor Stats Modal -->
+<div class="modal fade" id="visitorStatsModal" tabindex="-1" aria-labelledby="visitorStatsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="visitorStatsModalLabel">Visitor Statistics</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3>Total Visitors: {{ total_visitors }}</h3>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>IP Address</th>
+                            <th>Country</th>
+                            <th>Region</th>
+                            <th>City</th>
+                            <th>Visit Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for visitor in visitors %}
+                        <tr>
+                            <td>{{ visitor.ip_address }}</td>
+                            <td>{{ visitor.country }}</td>
+                            <td>{{ visitor.region }}</td>
+                            <td>{{ visitor.city }}</td>
+                            <td>{{ visitor.visit_time }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Hero Section with Slideshow -->
 <section id="home" class="hero">
     <div class="slideshow-container">
