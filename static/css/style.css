@@ -44,7 +44,7 @@ body {
     position: fixed;
     left: 15px;
     bottom: 15px;
-    background: var(--primary-color);
+    background: #9c3ef9;
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -56,10 +56,9 @@ body {
 }
 
 .creator-toggle:hover {
-    background: var(--hover-color);
+    box-shadow: 0 0 6px #9c3ef9, 0 0 12px #9c3ef9;
     color: white;
     transform: translateX(2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Flash News */
