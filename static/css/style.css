@@ -294,7 +294,7 @@ body {
 
 .about h3 {
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #ffffff;
 }
 
 .contact-info {
@@ -1076,4 +1076,107 @@ img[loading="lazy"].loaded {
         max-width: 50%;
         margin: 0 auto;
     }
+}
+
+/* Floating Contact Button */
+#contact-button {
+    position: fixed;
+    right: 3%;
+    top: 55%;
+    background: #007bff;
+    color: white;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transform: rotate(90deg);
+    transform-origin: right;
+}
+
+#contact-button i {
+    font-size: 22px;
+}
+
+#contact-button:hover {
+    background: #0056b3;
+}
+
+/* Contact Form */
+#contact-form {
+    position: fixed;
+    right: -350px;
+    top: 20%;
+    width: 320px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+#contact-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #007bff;
+}
+
+#contact-form input, 
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+#contact-form button:hover {
+    background: #0056b3;
+}
+
+/* Glowing Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #007bff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
 }

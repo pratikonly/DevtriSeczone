@@ -62,6 +62,49 @@
     </div>
 </section>
 
+<div id="contact-button"><i class="fas fa-phone"></i> Contact Us</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- Contact Form -->
+<div id="contact-form">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Full Name*" required>
+        <input type="email" id="email" name="email" placeholder="Email Address*" required>
+        <textarea id="message" name="message" placeholder="Your Message*" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const contactButton = document.getElementById("contact-button");
+        const contactForm = document.getElementById("contact-form");
+        const overlay = document.getElementById("overlay");
+
+        // Toggle Contact Form
+        contactButton.addEventListener("click", function () {
+            contactForm.style.right = "0px";
+            overlay.style.display = "block";
+        });
+
+        // Close when clicking outside
+        overlay.addEventListener("click", function () {
+            contactForm.style.right = "-350px";
+            overlay.style.display = "none";
+        });
+
+        // Form Submission (Replace with backend integration)
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            alert("Message Sent Successfully! (Email integration needed)");
+            document.getElementById("contactForm").reset();
+            contactForm.style.right = "-350px";
+            overlay.style.display = "none";
+        });
+    });
+</script>
 <!-- About Section -->
 <section id="about" class="about py-5">
     <div class="container">
@@ -71,7 +114,7 @@
                 <img src="{{ url_for('static', filename='images/about.jpg') }}" loading="lazy" alt="Team" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
-                <h3>Who We Are</h3>
+                <h3>We provide top staffing solution in Ghaziabad</h3>
                 <p>Devtri Seczone Private Limited specializes in crafting professional letters of recommendation and documentation that help advance your career. With years of experience in professional documentation, we understand what makes a compelling letter.</p>
                 <p>Our mission is to provide you with high-quality, personalized letters that effectively communicate your skills, achievements, and potential to future employers or academic institutions.</p>
             </div>
@@ -243,7 +286,7 @@
         <div class="row mt-5">
             <div class="col-md-3 mb-4">
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" loading="lazy" alt="Delhi Blog" class="img-fluid mb-3">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd" loading="lazy" alt="Delhi Blog" class="img-fluid mb-3">
                     <h4>Manpower Supply Company in Delhi</h4>
                     <p>As the central economic powerhouse of India Delhi maintains various industrial establishments with businesses and corporate organizations functioning ...</p>
                     <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
@@ -251,7 +294,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1565109698955-47435fcc3fb9" loading="lazy" alt="Ghaziabad Blog" class="img-fluid mb-3">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd" loading="lazy" alt="Ghaziabad Blog" class="img-fluid mb-3">
                     <h4>Manpower Consultancy in Ghaziabad</h4>
                     <p>Ghaziabad, an important industrial hub in the National Capital Region (NCR), buzzes with factories, transportation, and a booming service industry...</p>
                     <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
@@ -267,7 +310,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1581094613520-64981692c3f6" loading="lazy" alt="Faridabad Blog" class="img-fluid mb-3">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd" class="img-fluid mb-3">
                     <h4>Manpower Services in Faridabad</h4>
                     <p>The industrial center of Haryana which is Faridabad has experienced quick economic growth in recent years which leads to the great need for Manpower...</p>
                     <a href="#" class="btn btn-dark">READ MORE FOR DETAILS</a>
