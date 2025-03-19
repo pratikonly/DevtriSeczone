@@ -1,6 +1,6 @@
 .visitor-counter {
-    position: absolute;
-    top: 50px;
+    position: fixed;
+    top: 85px;
     right: 20px;
     background: var(--primary-color);
     color: white;
@@ -13,7 +13,7 @@
 
 @media (max-width: 768px) {
     .visitor-counter {
-        top: 60px;
+        top: 120px;
     }
 }
 
@@ -41,11 +41,11 @@ body {
 
 /* Flash News */
 .flash-news {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 76px;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 26, 0.9);
+    background: #1a1a1a;
     padding: 8px 15px;
     z-index: 999;
     border-bottom: 1px solid rgba(0, 123, 255, 0.2);
@@ -65,7 +65,6 @@ body {
 }
 
 .flash-text {
-    margin-top: 10px;
     color: white;
     text-decoration: none;
     white-space: nowrap;
@@ -84,7 +83,7 @@ body {
 
 @media (max-width: 768px) {
     .flash-news {
-        top: 106px;
+        top: 76px;
     }
     .visitor-counter {
         top: 150px;
@@ -161,7 +160,7 @@ body {
     align-items: center;
     color: var(--light-text);
     height: calc(100vh - 76px); /* Viewport height minus navbar height */
-    margin-top: 76px;
+    margin-top: 0;
     overflow: hidden;
 }
 
