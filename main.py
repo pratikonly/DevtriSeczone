@@ -1,7 +1,12 @@
 import os
 import logging
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, Response
 from email_validator import validate_email, EmailNotValidError
+from collections import defaultdict
+import json
+import time
+
+active_visitors = defaultdict(int)
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -19,7 +24,24 @@ if not os.path.exists(images_dir):
 @app.route('/')
 def index():
     logger.debug("Rendering index page")
+    client_ip = request.remote_addr
+    active_visitors[client_ip] = int(time.time())
     return render_template('index.html')
+
+@app.route('/visitor-count')
+def visitor_count():
+    def generate():
+        while True:
+            # Clean up inactive visitors (idle for more than 30 seconds)
+            current_time = int(time.time())
+            active_visitors_count = sum(1 for timestamp in active_visitors.values() 
+                                     if current_time - timestamp < 30)
+            
+            data = {'count': active_visitors_count}
+            yield f"data: {json.dumps(data)}\n\n"
+            time.sleep(2)
+    
+    return Response(generate(), mimetype='text/event-stream')
 
 @app.route('/contact', methods=['POST'])
 def contact():
