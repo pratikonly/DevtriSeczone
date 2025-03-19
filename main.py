@@ -1,12 +1,11 @@
 import os
 import logging
-from flask import Flask, render_template, request, flash, redirect, url_for, Response
+from flask import Flask, render_template, request, flash, redirect, url_for
 from email_validator import validate_email, EmailNotValidError
-from collections import defaultdict
-import json
-import time
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
-active_visitors = defaultdict(int)
+db = SQLAlchemy()
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -14,6 +13,16 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///visitors.db'
+db.init_app(app)
+
+class Visitor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    ip_address = db.Column(db.String(50))
+    visit_time = db.Column(db.DateTime, default=datetime.utcnow)
+
+with app.app_context():
+    db.create_all()
 
 # Ensure the static/images directory exists
 images_dir = os.path.join(app.static_folder, 'images')
@@ -25,23 +34,10 @@ if not os.path.exists(images_dir):
 def index():
     logger.debug("Rendering index page")
     client_ip = request.remote_addr
-    active_visitors[client_ip] = int(time.time())
+    new_visitor = Visitor(ip_address=client_ip)
+    db.session.add(new_visitor)
+    db.session.commit()
     return render_template('index.html')
-
-@app.route('/visitor-count')
-def visitor_count():
-    def generate():
-        while True:
-            # Clean up inactive visitors (idle for more than 30 seconds)
-            current_time = int(time.time())
-            active_visitors_count = sum(1 for timestamp in active_visitors.values() 
-                                     if current_time - timestamp < 30)
-            
-            data = {'count': active_visitors_count}
-            yield f"data: {json.dumps(data)}\n\n"
-            time.sleep(2)
-    
-    return Response(generate(), mimetype='text/event-stream')
 
 @app.route('/contact', methods=['POST'])
 def contact():

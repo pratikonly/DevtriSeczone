@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Live visitor counter
-    const eventSource = new EventSource('/visitor-count');
-    eventSource.onmessage = function(event) {
-        const data = JSON.parse(event.data);
-        document.getElementById('visitor-count').textContent = data.count;
-    };
     // Navbar toggle behavior
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
