@@ -1100,7 +1100,6 @@ img[loading="lazy"].loaded {
     position: fixed;
     right: 20px;
     top: 50%;
-    transform: translateY(-50%);
     background: var(--primary-color);
     color: white;
     padding: 10px 20px;
@@ -1111,11 +1110,11 @@ img[loading="lazy"].loaded {
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
+    transform: rotate(90deg);
 }
 
 #contact-button:hover {
     background: var(--hover-color);
-    transform: translateY(-50%) scale(1.05);
 }
 
 .overlay {
