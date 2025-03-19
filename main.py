@@ -36,25 +36,25 @@ if not os.path.exists(images_dir):
 @app.route('/')
 def index():
     logger.debug("Rendering index page")
-    client_ip = request.remote_addr
-    
     try:
-        response = requests.get(f'http://ip-api.com/json/{client_ip}')
-        if response.status_code == 200:
-            data = response.json()
-            new_visitor = Visitor(
-                ip_address=client_ip,
-                country=data.get('country', 'Unknown'),
-                city=data.get('city', 'Unknown'),
-                region=data.get('regionName', 'Unknown')
-            )
-        else:
-            new_visitor = Visitor(ip_address=client_ip)
-    except:
+        client_ip = request.remote_addr
         new_visitor = Visitor(ip_address=client_ip)
-    
-    db.session.add(new_visitor)
-    db.session.commit()
+        
+        try:
+            response = requests.get(f'http://ip-api.com/json/{client_ip}', timeout=5)
+            if response.status_code == 200:
+                data = response.json()
+                new_visitor.country = data.get('country', 'Unknown')
+                new_visitor.city = data.get('city', 'Unknown')
+                new_visitor.region = data.get('regionName', 'Unknown')
+        except Exception as e:
+            logger.error(f"Error fetching location data: {str(e)}")
+            
+        db.session.add(new_visitor)
+        db.session.commit()
+    except Exception as e:
+        logger.error(f"Error recording visitor: {str(e)}")
+        
     return render_template('index.html')
 
 @app.route('/visitor-stats')
