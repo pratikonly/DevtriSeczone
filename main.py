@@ -1,5 +1,6 @@
 import os
 import logging
+import requests
 from flask import Flask, render_template, request, flash, redirect, url_for
 from email_validator import validate_email, EmailNotValidError
 from flask_sqlalchemy import SQLAlchemy
