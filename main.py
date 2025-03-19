@@ -6,16 +6,24 @@ from email_validator import validate_email, EmailNotValidError
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-db = SQLAlchemy()
-
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+# Create the Flask app
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///visitors.db'
-db.init_app(app)
+
+# Configure the PostgreSQL database
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    "pool_pre_ping": True,
+    "pool_recycle": 300,
+}
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize SQLAlchemy
+db = SQLAlchemy(app)
 
 class Visitor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,8 +33,10 @@ class Visitor(db.Model):
     city = db.Column(db.String(100))
     region = db.Column(db.String(100))
 
+# Create tables
 with app.app_context():
     db.create_all()
+    logger.info("Database tables created successfully")
 
 # Ensure the static/images directory exists
 images_dir = os.path.join(app.static_folder, 'images')
@@ -41,7 +51,7 @@ def index():
     try:
         client_ip = request.remote_addr
         new_visitor = Visitor(ip_address=client_ip)
-        
+
         try:
             response = requests.get(f'http://ip-api.com/json/{client_ip}', timeout=5)
             if response.status_code == 200:
@@ -51,12 +61,13 @@ def index():
                 new_visitor.region = data.get('regionName', 'Unknown')
         except Exception as e:
             logger.error(f"Error fetching location data: {str(e)}")
-            
+
         db.session.add(new_visitor)
         db.session.commit()
+        logger.info(f"New visitor recorded: {client_ip}")
     except Exception as e:
         logger.error(f"Error recording visitor: {str(e)}")
-        
+
     return render_template('index.html', total_visitors=total_visitors)
 
 @app.route('/flash-news')
