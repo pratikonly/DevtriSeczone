@@ -58,6 +58,10 @@ def index():
         
     return render_template('index.html', total_visitors=total_visitors)
 
+@app.route('/flash-news')
+def flash_news():
+    return render_template('flash_news.html')
+
 @app.route('/visitor-stats')
 def visitor_stats():
     visitors = Visitor.query.all()
