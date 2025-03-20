@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/templates/base.html" }
+    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
