@@ -20,6 +20,8 @@ if not os.path.exists(images_dir):
 def index():
     logger.debug("Rendering index page")
     total_visitors = Visitor.query.count()
+    current_visitor = None
+    
     try:
         client_ip = request.remote_addr
         new_visitor = Visitor(ip_address=client_ip)
@@ -28,6 +30,7 @@ def index():
             response = requests.get(f'http://ip-api.com/json/{client_ip}', timeout=5)
             if response.status_code == 200:
                 data = response.json()
+                logger.debug(f"IP API response: {data}")
                 new_visitor.country = data.get('country', 'Unknown')
                 new_visitor.city = data.get('city', 'Unknown')
                 new_visitor.region = data.get('regionName', 'Unknown')
@@ -36,10 +39,13 @@ def index():
 
         db.session.add(new_visitor)
         db.session.commit()
+        
+        # Set the current visitor for display
+        current_visitor = new_visitor
     except Exception as e:
         logger.error(f"Error recording visitor: {str(e)}")
 
-    return render_template('index.html', total_visitors=total_visitors)
+    return render_template('index.html', total_visitors=total_visitors, current_visitor=current_visitor)
 
 @app.route('/flash-news')
 def flash_news():
@@ -47,9 +53,23 @@ def flash_news():
 
 @app.route('/visitor-stats')
 def visitor_stats():
-    visitors = Visitor.query.all()
+    # Get visitors in reverse chronological order (newest first)
+    visitors = Visitor.query.order_by(Visitor.visit_time.desc()).all()
     total_visitors = len(visitors)
-    return render_template('visitor_stats.html', total_visitors=total_visitors, visitors=visitors)
+    
+    # Get statistics by country
+    country_stats = {}
+    for visitor in visitors:
+        country = visitor.country or 'Unknown'
+        if country in country_stats:
+            country_stats[country] += 1
+        else:
+            country_stats[country] = 1
+    
+    return render_template('visitor_stats.html', 
+                          total_visitors=total_visitors, 
+                          visitors=visitors,
+                          country_stats=country_stats)
 
 @app.route('/contact', methods=['POST'])
 def contact():

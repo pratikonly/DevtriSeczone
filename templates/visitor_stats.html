@@ -3,32 +3,62 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2>Visitor Statistics</h2>
-    <div class="card bg-dark text-white">
-        <div class="card-body">
-            <h3>Total Visitors: {{ total_visitors }}</h3>
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th>IP Address</th>
-                        <th>Country</th>
-                        <th>Region</th>
-                        <th>City</th>
-                        <th>Visit Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for visitor in visitors %}
-                    <tr>
-                        <td>{{ visitor.ip_address }}</td>
-                        <td>{{ visitor.country }}</td>
-                        <td>{{ visitor.region }}</td>
-                        <td>{{ visitor.city }}</td>
-                        <td>{{ visitor.visit_time }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+    <h2 class="mb-4">Visitor Statistics</h2>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-header">
+                    <h4>Summary</h4>
+                </div>
+                <div class="card-body">
+                    <h3>Total Visitors: {{ total_visitors }}</h3>
+                    <hr>
+                    <h5>Visitors by Country</h5>
+                    <ul class="list-group list-group-flush">
+                        {% for country, count in country_stats.items() %}
+                        <li class="list-group-item bg-dark text-white d-flex justify-content-between">
+                            <span>{{ country }}</span>
+                            <span class="badge bg-primary rounded-pill">{{ count }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="card bg-dark text-white">
+                <div class="card-header">
+                    <h4>Recent Visitors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>IP Address</th>
+                                    <th>Country</th>
+                                    <th>Region</th>
+                                    <th>City</th>
+                                    <th>Visit Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for visitor in visitors %}
+                                <tr>
+                                    <td>{{ visitor.ip_address }}</td>
+                                    <td>{{ visitor.country or 'Unknown' }}</td>
+                                    <td>{{ visitor.region or 'Unknown' }}</td>
+                                    <td>{{ visitor.city or 'Unknown' }}</td>
+                                    <td>{{ visitor.visit_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
