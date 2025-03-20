@@ -4,7 +4,7 @@ import requests
 from flask import render_template, request, flash, redirect, url_for
 from email_validator import validate_email, EmailNotValidError
 from app import app, db
-from models import Visitor
+from models import Visitor, ContactSubmission
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -89,7 +89,33 @@ def contact():
             flash('Please enter a valid email address', 'error')
             return redirect(url_for('index', _anchor='contact'))
 
-        # In a real implementation, you would send the email here
+        # Create a new contact submission record
+        client_ip = request.remote_addr
+        new_submission = ContactSubmission(
+            name=name,
+            email=email,
+            message=message,
+            ip_address=client_ip
+        )
+        
+        # Try to get location data for the submission
+        try:
+            response = requests.get(f'http://ip-api.com/json/{client_ip}', timeout=5)
+            if response.status_code == 200:
+                data = response.json()
+                logger.debug(f"IP API response for contact form: {data}")
+                new_submission.country = data.get('country', 'Unknown')
+                new_submission.city = data.get('city', 'Unknown')
+                new_submission.region = data.get('regionName', 'Unknown')
+        except Exception as e:
+            logger.error(f"Error fetching location data for contact form: {str(e)}")
+        
+        # Save to the database
+        db.session.add(new_submission)
+        db.session.commit()
+        logger.info(f"Saved contact submission from {name} <{email}> to database")
+        
+        # In a real implementation, you would also send the email here
         flash('Thank you for your message! We will get back to you soon.', 'success')
         return redirect(url_for('index', _anchor='contact'))
 
