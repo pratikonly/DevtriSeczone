@@ -24,11 +24,6 @@
     <div class="visitor-counter">
         <i class="fas fa-users"></i>
         <span>{{ total_visitors }} Visitors</span>
-        {% if current_visitor %}
-        <a href="{{ url_for('visitor_stats') }}" class="visitor-details" title="View All Visitor Stats">
-            <small>Your IP: {{ current_visitor.ip_address }} | Region: {{ current_visitor.region or 'Unknown' }}, {{ current_visitor.country or 'Unknown' }}</small>
-        </a>
-        {% endif %}
     </div>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
