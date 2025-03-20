@@ -1,32 +1,14 @@
 import os
 import logging
 import requests
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for
 from email_validator import validate_email, EmailNotValidError
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-
-db = SQLAlchemy()
+from app import app, db
+from models import Visitor
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
-app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///visitors.db'
-db.init_app(app)
-
-class Visitor(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    ip_address = db.Column(db.String(50))
-    visit_time = db.Column(db.DateTime, default=datetime.utcnow)
-    country = db.Column(db.String(100))
-    city = db.Column(db.String(100))
-    region = db.Column(db.String(100))
-
-with app.app_context():
-    db.create_all()
 
 # Ensure the static/images directory exists
 images_dir = os.path.join(app.static_folder, 'images')
@@ -41,7 +23,7 @@ def index():
     try:
         client_ip = request.remote_addr
         new_visitor = Visitor(ip_address=client_ip)
-        
+
         try:
             response = requests.get(f'http://ip-api.com/json/{client_ip}', timeout=5)
             if response.status_code == 200:
@@ -51,12 +33,12 @@ def index():
                 new_visitor.region = data.get('regionName', 'Unknown')
         except Exception as e:
             logger.error(f"Error fetching location data: {str(e)}")
-            
+
         db.session.add(new_visitor)
         db.session.commit()
     except Exception as e:
         logger.error(f"Error recording visitor: {str(e)}")
-        
+
     return render_template('index.html', total_visitors=total_visitors)
 
 @app.route('/flash-news')
